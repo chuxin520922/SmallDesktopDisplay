@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.ino": "cpp",
+        "functional": "cpp",
+        "array": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp"
+    }
+}

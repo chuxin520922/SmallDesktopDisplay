@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Dxf \ Libraries \ Processing 3+</title>
+		
+		<link rel="icon" href="./img/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="Author" content="Processing Foundation" />
+		<meta name="Publisher" content="Processing Foundation" />
+		<meta name="Keywords" content="Processing, Sketchbook, Programming, Coding, Code, Art, Design" />
+		<meta name="Description" content="Processing is a flexible software sketchbook and a language for learning how to code within the context of the visual arts. Since 2001, Processing has promoted software literacy within the visual arts and visual literacy within technology." />
+		<meta name="Copyright" content="All contents copyright the Processing Foundation, Ben Fry, Casey Reas, and the MIT Media Laboratory" />
+		
+		<script src="../../javascript/MM_functions.js" type="text/javascript"></script>
+	
+		<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body id="Libraries" onload="" >
+		
+		<!-- ==================================== PAGE ============================ --> 
+		<div id="container">
+	
+			<!-- ==================================== HEADER ============================ --> 
+			<div id="header">
+				<a href="http://processing.org/" title="Processing.org"><div class="processing-logo" alt="Processing cover"></div></a>
+				<form name="search" action="//www.google.com/search" method="get" >
+				<!--<label>Search processing.org:</label>-->
+				        <p><input type="hidden" name="as_sitesearch" value="processing.org" />
+				       <input type="text" name="as_q" value="" size="20" class="text" /> 
+						<input type="submit" value=" " /></p>
+				</form>
+			</div>  
+						<div id="navigation">
+				<div class="navBar" id="mainnav">
+					<a href="../../index.html">Language</a><br> 
+					<a href="../../libraries/index.html" class="active">Libraries</a><br> 
+					<a href="../../tools/index.html">Tools</a><br> 
+					<a href="../../environment/index.html">Environment</a>
+				</div>
+			</div>
+
+		
+			<a id="TOP" name="TOP"></a>
+			
+			<!-- ==================================== CONTENT - Headers ============================ -->
+			<div class="content">
+			
+			 
+<div class="librarytitle"><h3>DXF Export</h3></div>
+
+<div class="full-alt">
+  <p>
+    The DXF library writes all triangle-based graphics (polygons, boxes, spheres, etc.) to a DXF file. 
+    It works with the <strong>beginRaw()</strong> and <strong>endRaw()</strong> functions. 
+	  These functions will grab and save the shape data just before it is rendered to the screen. 
+	  At this stage, your entire scene is nothing but a long list of lines and triangles. 
+	  This means that a shape created with the <strong>sphere()</strong> function will be made up of 
+	  hundreds of triangles, rather than a single object. The source code is available on the <a href="https://github.com/processing/processing/tree/master/java/libraries/dxf">Processing</a> GitHub repository. Please report bugs <a href="https://github.com/processing/processing/issues">here</a>. 
+  </p>
+	<p>
+    Use an event function like a <strong>keyPressed()</strong> to trigger it, to avoid writing a 
+    file each time through <strong>draw()</strong>. By default, the file will be saved to the 
+    sketch's folder. Use Sketch &gt; Show Sketch Folder to see it from the Processing Environment.
+  </p>
+    
+  <p>This simple example shows how to use the library: </p>
+
+  <pre>import processing.dxf.*;
+
+boolean record;
+
+void setup() {
+  size(500, 500, P3D);
+}
+
+void draw() {
+  if (record) {
+    beginRaw(DXF, "output.dxf");
+  }
+
+  // Do all your drawing here
+  if (record) {
+    endRaw();
+    record = false;
+  }
+}
+
+void keyPressed() {
+  // Use a key press so that it doesn't make a million files
+  if (key == 'r') {
+  	record = true;
+  }
+}
+</pre>
+
+</div>
+
+
+			
+			</div>
+
+			<!-- ==================================== FOOTER ============================ --> 
+  			<div id="footer">
+    			<div id="copyright">Processing was initiated by <a href="http://benfry.com/">Ben Fry</a> and <a href="http://reas.com">Casey Reas</a>. It is developed by a <a href="../../about/people.html">small team of volunteers</a>.</div>  
+    			<div id="colophon">
+
+                    <a href="../../copyright.html">&copy; Info</a>
+
+                </div>
+  			</div>
+  			
+		</div>
+	</body>
+</html>

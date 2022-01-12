@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>PVector \ Language (API) \ Processing 3+</title>
+
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="Author" content="Processing Foundation" />
+		<meta name="Publisher" content="Processing Foundation" />
+		<meta name="Keywords" content="Processing, Sketchbook, Programming, Coding, Code, Art, Design" />
+		<meta name="Description" content="Processing is a flexible software sketchbook and a language for learning how to code within the context of the visual arts. Since 2001, Processing has promoted software literacy within the visual arts and visual literacy within technology." />
+		<meta name="Copyright" content="All contents copyright the Processing Foundation, Ben Fry, Casey Reas, and the MIT Media Laboratory" />
+
+		<script src="javascript/modernizr-2.6.2.touch.js" type="text/javascript"></script>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+	</head>
+	<body id="Langauge-en" onload="" >
+
+		<!-- ==================================== PAGE ============================ -->
+		<div id="container">
+
+
+			<!-- ==================================== HEADER ============================ -->
+  			<div id="ribbon">
+				<ul class="left">
+					<li class="highlight"><a href="http://processing.org/">Processing</a></li>
+					<li><a href="http://p5js.org/">p5.js</a></li>
+					<li><a href="http://py.processing.org/">Processing.py</a></li>
+					<li><a href="http://android.processing.org/">Processing for Android</a></li>
+					<li><a href="http://pi.processing.org/">Processing for Pi</a></li>
+				</ul>
+				<ul class="right">
+					<li><a href="https://processingfoundation.org/">Processing Foundation</a></li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			<div id="header">
+				<a href="/" title="Back to the Processing cover."><div class="processing-logo no-cover" alt="Processing cover"></div></a>
+				<form name="search" method="get" action="//www.google.com/search">
+				       <p><input type="hidden" name="as_sitesearch" value="processing.org" />
+				       <input type="text" name="as_q" value="" size="20" class="text" />
+				       <input type="submit" value=" " /></p>
+				</form>
+			</div>
+			<!--
+			<div id="ribbon-announce">
+				<ul class="center">
+					<li><a href="https://donorbox.org/supportpf2019-fundraising-campaign" target="_blank">This season, we need your help! Click here to donate to #SupportP5!</a></li>
+				</ul>
+				<div class="clear"></div>
+			</div>-->
+			<a id="TOP" name="TOP"></a>
+
+			<div id="navigation">
+					<div class="navBar" id="mainnav">
+	<a href="index.html" class='active'>Language</a><br>
+	<a href="libraries/index.html" >Libraries</a><br>
+	<a href="tools/index.html">Tools</a><br>
+	<a href="environment/index.html">Environment</a><br>
+</div>
+
+<script> document.querySelectorAll(".processing-logo")[0].className = "processing-logo"; </script>
+			</div>
+
+
+
+
+			<!-- ==================================== CONTENT - Headers ============================ -->
+			<div class="content">
+
+			 <p class="ref-notice">This reference is for Processing 3.0+. If you have a previous version, use the reference included with your software in the Help menu. If you see any errors or have suggestions, <a href="https://github.com/processing/processing-docs/issues?state=open">please let us know</a>. If you prefer a more technical reference, visit the <a href="http://processing.github.io/processing-javadocs/core/">Processing Core Javadoc</a> and <a href="http://processing.github.io/processing-javadocs/libraries/">Libraries Javadoc</a>.</p>
+
+<table cellpadding="0" cellspacing="0" border="0" class="ref-item">
+	<tr class="name-row">
+		<th scope="row">Name</th>
+		<td><h3>PVector</h3></td>
+	</tr>
+
+	<tr class=""><th scope="row">Examples</th><td><div class="example"><pre >
+PVector v1, v2;
+
+void setup() {
+  noLoop();
+  v1 = new PVector(40, 20);
+  v2 = new PVector(25, 50); 
+}
+
+void draw() {
+  ellipse(v1.x, v1.y, 12, 12);
+  ellipse(v2.x, v2.y, 12, 12);
+  v2.add(v1);
+  ellipse(v2.x, v2.y, 24, 24);
+}
+</pre></div>
+</td></tr>
+
+		<tr class="">
+		<th scope="row">Description</th>
+		<td>
+A class to describe a two or three dimensional vector, specifically a Euclidean (also known as geometric) vector.   A vector is an entity that has both magnitude and direction.  The datatype, however, stores the components of the vector (x,y for 2D, and x,y,z for 3D).  The magnitude and direction can be accessed via the methods <b>mag()</b> and <b>heading()</b>.<br />
+<br />
+In many of the Processing examples, you will see <b>PVector</b> used to describe a position, velocity, or acceleration.  For example, if you consider a rectangle moving across the screen, at any given instant it has a position (a vector that points from the origin to its location), a velocity (the rate at which the object's position changes per time unit, expressed as a vector), and acceleration (the rate at which the object's velocity changes per time unit, expressed as a vector). Since vectors represent groupings of values, we cannot simply use traditional addition/multiplication/etc. Instead, we'll need to do some "vector" math, which is made easy by the methods inside the <b>PVector</b> class.
+</td>
+	</tr>
+
+	<tr class=""><th scope="row"><b>Fields</b></th><td><table cellpadding="0" cellspacing="0" border="0"><tr class="">
+
+	<th scope="row"><a href="PVector_x.html">x</a></th>
+	<td>The x component of the vector</td>
+</tr>
+<tr class="">
+
+	<th scope="row"><a href="PVector_y.html">y</a></th>
+	<td>The y component of the vector</td>
+</tr>
+<tr class="">
+
+	<th scope="row"><a href="PVector_z.html">z</a></th>
+	<td>The z component of the vector</td>
+</tr></table></td></tr>
+
+	<tr class=""><th scope="row">Methods</th><td><table cellpadding="0" cellspacing="0" border="0"><tr class="">
+
+	<th scope="row"><a href="PVector_set_.html">set()</a></th>
+	<td>Set the components of the vector</td>
+</tr>
+<tr class="">
+
+	<th scope="row"><a href="PVector_random2D_.html">random2D()</a></th>
+	<td>Make a new 2D unit vector with a random direction.</td>
+</tr>
+<tr class="">
+
+	<th scope="row"><a href="PVector_random3D_.html">random3D()</a></th>
+	<td>Make a new 3D unit vector with a random direction.</td>
+</tr>
+<tr class="">
+
+	<th scope="row"><a href="PVector_fromAngle_.html">fromAngle()</a></th>
+	<td>Make a new 2D unit vector from an angle</td>
+</tr>
+<tr class="">
+
+	<th scope="row"><a href="PVector_copy_.html">copy()</a></th>
+	<td>Get a copy of the vector</td>
+</tr>
+<tr class="">
+
+	<th scope="row"><a href="PVector_mag_.html">mag()</a></th>
+	<td>Calculate the magnitude of the vector</td>
+</tr>
+<tr class="">
+
+	<th scope="row"><a href="PVector_magSq_.html">magSq()</a></th>
+	<td>Calculate the magnitude of the vector, squared</td>
+</tr>
+<tr class="">
+
+	<th scope="row"><a href="PVector_add_.html">add()</a></th>
+	<td>Adds x, y, and z components to a vector, one vector to another, or two independent vectors</td>
+</tr>
+<tr class="">
+
+	<th scope="row"><a href="PVector_sub_.html">sub()</a></th>
+	<td>Subtract x, y, and z components from a vector, one vector from another, or two independent vectors</td>
+</tr>
+<tr class="">
+
+	<th scope="row"><a href="PVector_mult_.html">mult()</a></th>
+	<td>Multiply a vector by a scalar</td>
+</tr>
+<tr class="">
+
+	<th scope="row"><a href="PVector_div_.html">div()</a></th>
+	<td>Divide a vector by a scalar</td>
+</tr>
+<tr class="">
+
+	<th scope="row"><a href="PVector_dist_.html">dist()</a></th>
+	<td>Calculate the distance between two points</td>
+</tr>
+<tr class="">
+
+	<th scope="row"><a href="PVector_dot_.html">dot()</a></th>
+	<td>Calculate the dot product of two vectors</td>
+</tr>
+<tr class="">
+
+	<th scope="row"><a href="PVector_cross_.html">cross()</a></th>
+	<td>Calculate and return the cross product</td>
+</tr>
+<tr class="">
+
+	<th scope="row"><a href="PVector_normalize_.html">normalize()</a></th>
+	<td>Normalize the vector to a length of 1</td>
+</tr>
+<tr class="">
+
+	<th scope="row"><a href="PVector_limit_.html">limit()</a></th>
+	<td>Limit the magnitude of the vector</td>
+</tr>
+<tr class="">
+
+	<th scope="row"><a href="PVector_setMag_.html">setMag()</a></th>
+	<td>Set the magnitude of the vector</td>
+</tr>
+<tr class="">
+
+	<th scope="row"><a href="PVector_heading_.html">heading()</a></th>
+	<td>Calculate the angle of rotation for this vector</td>
+</tr>
+<tr class="">
+
+	<th scope="row"><a href="PVector_rotate_.html">rotate()</a></th>
+	<td>Rotate the vector by an angle (2D only)</td>
+</tr>
+<tr class="">
+
+	<th scope="row"><a href="PVector_lerp_.html">lerp()</a></th>
+	<td>Linear interpolate the vector to another vector</td>
+</tr>
+<tr class="">
+
+	<th scope="row"><a href="PVector_angleBetween_.html">angleBetween()</a></th>
+	<td>Calculate and return the angle between two vectors</td>
+</tr>
+<tr class="">
+
+	<th scope="row"><a href="PVector_array_.html">array()</a></th>
+	<td>Return a representation of the vector as a float array</td>
+</tr></table></td></tr>
+
+	<tr class=""><th scope="row">Constructor</th><td><pre>PVector()
+PVector(<kbd>x</kbd>, <kbd>y</kbd>, <kbd>z</kbd>)
+PVector(<kbd>x</kbd>, <kbd>y</kbd>)
+</pre></td></tr>
+	<tr class="">	<th scope="row">Parameters</th><td><table cellpadding="0" cellspacing="0" border="0"><tr class="">
+<th scope="row" class="code">x</th>
+<td>float: the x coordinate.</td>
+</tr>
+<tr class="">
+<th scope="row" class="code">y</th>
+<td>float: the y coordinate.</td>
+</tr>
+<tr class="">
+<th scope="row" class="code">z</th>
+<td>float: the z coordinate.</td>
+</tr></table></td>	</tr>
+
+</table>
+
+Updated on January 9, 2020 00:33:12pm EST<br /><br />
+
+<!-- Creative Commons License -->
+
+<div class="license">
+	<a rel="license" href="//creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border: none" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a>
+</div>
+<!--
+
+<?xpacket begin='' id=''?>
+<x:xmpmeta xmlns:x='adobe:ns:meta/'>
+  <rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+    <rdf:Description rdf:about=''
+		     xmlns:xapRights='http://ns.adobe.com/xap/1.0/rights/'>
+      <xapRights:Marked>True</xapRights:Marked>
+    </rdf:Description>
+    <rdf:Description rdf:about=''
+		     xmlns:xapRights='http://ns.adobe.com/xap/1.0/rights/'
+		     >
+      <xapRights:UsageTerms>
+	<rdf:Alt>
+	  <rdf:li xml:lang='x-default' >This work is licensed under a &lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License&lt;/a&gt;.</rdf:li>
+	  <rdf:li xml:lang='en' >This work is licensed under a &lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License&lt;/a&gt;.</rdf:li>
+	  </rdf:Alt>
+      </xapRights:UsageTerms>
+    </rdf:Description>
+    <rdf:Description rdf:about=''
+      xmlns:cc='http://creativecommons.org/ns#'>
+      <cc:license rdf:resource='http://creativecommons.org/licenses/by-nc-sa/4.0/'/>
+    </rdf:Description>
+
+  </rdf:RDF>
+</x:xmpmeta>
+<?xpacket end='r'?>
+
+-->
+
+			</div>
+
+			<!-- ==================================== FOOTER ============================ -->
+  			<div id="footer">
+    			<div id="copyright">Processing is an open project intiated by <a href="http://benfry.com/">Ben Fry</a> and <a href="http://reas.com">Casey Reas</a>. It is developed by a <a href="about/people.html">team of volunteers</a>. </div>
+    			<div id="colophon">
+
+                    <a href="copyright.html">&copy; Info</a>
+
+                </div>
+  						</div>
+		</div>
+		<script src="javascript/jquery-1.9.1.min.js"></script>
+		<script src="javascript/site.js" type="text/javascript"></script>
+	</body>
+
+</html>

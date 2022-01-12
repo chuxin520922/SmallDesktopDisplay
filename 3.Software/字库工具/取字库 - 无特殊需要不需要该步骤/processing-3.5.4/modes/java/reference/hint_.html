@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>hint() \ Language (API) \ Processing 3+</title>
+
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="Author" content="Processing Foundation" />
+		<meta name="Publisher" content="Processing Foundation" />
+		<meta name="Keywords" content="Processing, Sketchbook, Programming, Coding, Code, Art, Design" />
+		<meta name="Description" content="Processing is a flexible software sketchbook and a language for learning how to code within the context of the visual arts. Since 2001, Processing has promoted software literacy within the visual arts and visual literacy within technology." />
+		<meta name="Copyright" content="All contents copyright the Processing Foundation, Ben Fry, Casey Reas, and the MIT Media Laboratory" />
+
+		<script src="javascript/modernizr-2.6.2.touch.js" type="text/javascript"></script>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+	</head>
+	<body id="Langauge-en" onload="" >
+
+		<!-- ==================================== PAGE ============================ -->
+		<div id="container">
+
+
+			<!-- ==================================== HEADER ============================ -->
+			<div id="ribbon">
+				<ul class="left">
+					<li class="highlight"><a href="http://processing.org/">Processing</a></li>
+					<li><a href="http://p5js.org/">p5.js</a></li>
+					<li><a href="http://py.processing.org/">Processing.py</a></li>
+					<li><a href="http://android.processing.org/">Processing for Android</a></li>
+					<li><a href="http://pi.processing.org/">Processing for Pi</a></li>
+				</ul>
+				<ul class="right">
+					<li><a href="https://processingfoundation.org/">Processing Foundation</a></li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			<div id="header">
+				<a href="/" title="Back to the Processing cover."><div class="processing-logo no-cover" alt="Processing cover"></div></a>
+				<form name="search" method="get" action="//www.google.com/search">
+				       <p><input type="hidden" name="as_sitesearch" value="processing.org" />
+				       <input type="text" name="as_q" value="" size="20" class="text" />
+				       <input type="submit" value=" " /></p>
+				</form>
+			</div>
+			<!--<div id="ribbon-announce">
+				<ul class="center">
+					<li><a href="https://donorbox.org/supportpf2019-fundraising-campaign" target="_blank">This season, we need your help! Click here to donate to #SupportP5!</a></li>
+				</ul>
+				<div class="clear"></div>
+			</div>-->
+			<a id="TOP" name="TOP"></a>
+
+			<div id="navigation">
+				<div class="navBar" id="mainnav">
+	<a href="index.html" class='active'>Language</a><br>
+	<a href="libraries/index.html" >Libraries</a><br>
+	<a href="tools/index.html">Tools</a><br>
+	<a href="environment/index.html">Environment</a><br>
+</div>
+
+<script> document.querySelectorAll(".processing-logo")[0].className = "processing-logo"; </script>
+			</div>
+
+			<!-- ==================================== CONTENT - Headers ============================ -->
+			<div class="content">
+
+			 <p class="ref-notice">This reference is for Processing 3.0+. If you have a previous version, use the reference included with your software in the Help menu. If you see any errors or have suggestions, <a href="https://github.com/processing/processing-docs/issues?state=open">please let us know</a>. If you prefer a more technical reference, visit the <a href="http://processing.github.io/processing-javadocs/core/">Processing Core Javadoc</a> and <a href="http://processing.github.io/processing-javadocs/libraries/">Libraries Javadoc</a>.</p>
+
+<table cellpadding="0" cellspacing="0" border="0" class="ref-item">
+
+
+	<tr class="name-row">
+		<th scope="row">Name</th>
+
+		<td><h3>hint()</h3></td>
+	</tr>
+
+	<tr class="">
+
+	<tr class=""><th scope="row">Examples</th><td><div class="example"><pre >
+void setup() {
+  size(200, 200, P3D); 
+  hint(DISABLE_DEPTH_TEST);
+}
+
+void draw() {
+  background(204);
+  pushMatrix();
+  translate(width/2, height/2);
+  rotateY(1);
+  box(60);
+  popMatrix();
+  line(10, 100, 190, 100);
+}
+</pre></div>
+</td></tr>
+
+		<tr class="">
+		<th scope="row">Description</th>
+		<td>
+This function is used to enable or disable special features that control how graphics are drawn. In the course of developing Processing, we had to make hard decisions about tradeoffs between performance and visual quality. We put significant effort into determining what makes most sense for the largest number of users, and then use functions like <b>hint()</b> to allow people to tune the settings for their particular sketch. Implementing a <b>hint()</b> is a last resort that's used when a more elegant solution cannot be found. Some options might graduate to standard features instead of hints over time, or be added and removed between (major) releases.
+<br />
+<br />
+<strong>Hints used by the default renderer:</strong>
+<br /><br />
+<b>ENABLE_STROKE_PURE</b><br />
+Fixes a problem with shapes that have a stroke and are rendered using small steps (for instance, using vertex() with points that are close to one another), or are drawn at small sizes.
+<br />
+<br />
+<strong>Hints for use with P2D and P3D:</strong>
+<br /><br />
+<b>DISABLE_ASYNC_SAVEFRAME</b><br />
+save() and saveFrame() will not use separate threads for saving and will block until the image is written to the drive. This was the default behavior in 3.0b7 and before. To enable, call hint(ENABLE_ASYNC_SAVEFRAME).
+<br /><br />
+<b>DISABLE_OPENGL_ERRORS</b><br />
+Speeds up the P3D renderer setting by not checking for errors while running.
+<br /><br />
+<b>DISABLE_TEXTURE_MIPMAPS</b><br />
+Disable generation of texture mipmaps in P2D or P3D. This results in lower quality - but faster - rendering of texture images when they appear smaller than their native resolutions (the mipmaps are scaled-down versions of a texture that make it look better when drawing it at a small size). However, the difference in performance is fairly minor on recent desktop video cards.
+<br />
+<br />
+<strong>Hints for use with P3D only:</strong>
+<br /><br />
+<b>DISABLE_DEPTH_MASK</b><br />
+Disables writing into the depth buffer. This means that a shape drawn with this hint can be hidden by another shape drawn later, irrespective of their distances to the camera. Note that this is different from disabling the depth test. The depth test is still applied, as long as the DISABLE_DEPTH_TEST hint is not called, but the depth values of the objects are not recorded. This is useful when drawing a semi-transparent 3D object without depth sorting, in order to avoid visual glitches due the faces of the object being at different distances from the camera, but still having the object properly occluded by the rest of the objects in the scene.
+<br /><br />
+<b>ENABLE_DEPTH_SORT</b><br />
+Enable primitive z-sorting of triangles and lines in P3D. This can slow performance considerably, and the algorithm is not yet perfect.
+<br /><br />
+<b>DISABLE_DEPTH_TEST</b><br />
+Disable the zbuffer, allowing you to draw on top of everything at will. When depth testing is disabled, items will be drawn to the screen sequentially, like a painting. This hint is most often used to draw in 3D, then draw in 2D on top of it (for instance, to draw GUI controls in 2D on top of a 3D interface). When called, this will also clear the depth buffer. Restore the default with <b>hint(ENABLE_DEPTH_TEST)</b>, but note that with the depth buffer cleared, any 3D drawing that happens later in will ignore existing shapes on the screen.
+<br /><br />
+<b>DISABLE_OPTIMIZED_STROKE</b><br />
+Forces the P3D renderer to draw each shape (including its strokes) separately, instead of batching them into larger groups for better performance. One consequence of this is that 2D items drawn with P3D are correctly stacked on the screen, depending on the order in which they were drawn. Otherwise, glitches such as the stroke lines being drawn on top of the interior of all the shapes will occur. However, this hint can make rendering substantially slower, so it is recommended to use it only when drawing a small amount of shapes. For drawing two-dimensional scenes, use the P2D renderer instead, which doesn't need the hint to properly stack shapes and their strokes.
+<br /><br />
+<b>ENABLE_STROKE_PERSPECTIVE</b><br />
+Enables stroke geometry (lines and points) to be affected by the perspective, meaning that they will look smaller as they move away from the camera.
+</td>
+	</tr>
+
+	<tr class=""><th scope="row">Syntax</th><td><pre>
+hint(which)
+</pre></td></tr>
+
+	<tr class="">	<th scope="row">Parameters</th><td><table cellpadding="0" cellspacing="0" border="0"><tr class="">
+<th scope="row" class="code">which</th>
+<td>int: the hint mode to use</td>
+</tr></table></td>	</tr>
+
+	<tr class=""><th scope="row">Related</th><td><a class="code" href="PGraphics.html">PGraphics</a><br />
+<a class="code" href="createGraphics_.html">createGraphics()</a><br />
+<a class="code" href="size_.html">size()</a><br /></td></tr>
+</table>
+
+Updated on January 9, 2020 00:33:17pm EST<br /><br />
+
+<!-- Creative Commons License -->
+
+<div class="license">
+	<a rel="license" href="//creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border: none" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a>
+</div>
+<!--
+
+<?xpacket begin='' id=''?>
+<x:xmpmeta xmlns:x='adobe:ns:meta/'>
+  <rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+    <rdf:Description rdf:about=''
+		     xmlns:xapRights='http://ns.adobe.com/xap/1.0/rights/'>
+      <xapRights:Marked>True</xapRights:Marked>
+    </rdf:Description>
+    <rdf:Description rdf:about=''
+		     xmlns:xapRights='http://ns.adobe.com/xap/1.0/rights/'
+		     >
+      <xapRights:UsageTerms>
+	<rdf:Alt>
+	  <rdf:li xml:lang='x-default' >This work is licensed under a &lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License&lt;/a&gt;.</rdf:li>
+	  <rdf:li xml:lang='en' >This work is licensed under a &lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License&lt;/a&gt;.</rdf:li>
+	  </rdf:Alt>
+      </xapRights:UsageTerms>
+    </rdf:Description>
+    <rdf:Description rdf:about=''
+      xmlns:cc='http://creativecommons.org/ns#'>
+      <cc:license rdf:resource='http://creativecommons.org/licenses/by-nc-sa/4.0/'/>
+    </rdf:Description>
+
+  </rdf:RDF>
+</x:xmpmeta>
+<?xpacket end='r'?>
+
+-->
+
+			</div>
+
+			<!-- ==================================== FOOTER ============================ -->
+  			<div id="footer">
+
+    			<div id="copyright">Processing is an open project intiated by <a href="http://benfry.com/">Ben Fry</a> and <a href="http://reas.com">Casey Reas</a>. It is developed by a <a href="http://processing.org/about/people/">team of volunteers</a>.</div>
+    			<div id="colophon">
+
+                    <a href="copyright.html">&copy; Info</a>
+
+                </div>
+  			</div>
+
+		</div>
+		<script src="javascript/jquery-1.9.1.min.js"></script>
+		<script src="javascript/site.js" type="text/javascript"></script>
+	</body>
+</html>

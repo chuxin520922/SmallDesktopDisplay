@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>Io \ Libraries \ Processing 3+</title>
+		
+		<link rel="icon" href="./img/favicon.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="Author" content="Processing Foundation" />
+		<meta name="Publisher" content="Processing Foundation" />
+		<meta name="Keywords" content="Processing, Sketchbook, Programming, Coding, Code, Art, Design" />
+		<meta name="Description" content="Processing is a flexible software sketchbook and a language for learning how to code within the context of the visual arts. Since 2001, Processing has promoted software literacy within the visual arts and visual literacy within technology." />
+		<meta name="Copyright" content="All contents copyright the Processing Foundation, Ben Fry, Casey Reas, and the MIT Media Laboratory" />
+		
+		<script src="../../javascript/MM_functions.js" type="text/javascript"></script>
+	
+		<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body id="Libraries" onload="" >
+		
+		<!-- ==================================== PAGE ============================ --> 
+		<div id="container">
+	
+			<!-- ==================================== HEADER ============================ --> 
+			<div id="header">
+				<a href="http://processing.org/" title="Processing.org"><div class="processing-logo" alt="Processing cover"></div></a>
+				<form name="search" action="//www.google.com/search" method="get" >
+				<!--<label>Search processing.org:</label>-->
+				        <p><input type="hidden" name="as_sitesearch" value="processing.org" />
+				       <input type="text" name="as_q" value="" size="20" class="text" /> 
+						<input type="submit" value=" " /></p>
+				</form>
+			</div>  
+						<div id="navigation">
+				<div class="navBar" id="mainnav">
+					<a href="../../index.html">Language</a><br> 
+					<a href="../../libraries/index.html" class="active">Libraries</a><br> 
+					<a href="../../tools/index.html">Tools</a><br> 
+					<a href="../../environment/index.html">Environment</a>
+				</div>
+			</div>
+
+		
+			<a id="TOP" name="TOP"></a>
+			
+			<!-- ==================================== CONTENT - Headers ============================ -->
+			<div class="content">
+			
+			 
+<div class="librarytitle"><h3>Hardware I/O</h3></div>
+
+<div class="full-alt">
+
+  <p>
+    The Hardware I/O library allows access to the computer's hardware periperals, such as digital
+    inputs and outputs, serial busses, and the like, in a fashion similar to the Arduino plaform.
+    This library is only available for embedded Linux boards with the necessary kernel drivers,
+    such as the Raspberry Pi.
+  </p>
+  <p>
+    The source code is available on the <a href="https://github.com/processing/processing/tree/master/java/libraries/io">processing</a> GitHub repository. Please report bugs <a href="https://github.com/processing/processing/issues/new?labels=io">here</a>.
+  </p>
+
+</div>
+
+<div class="colone-alt">
+  <p>
+    <h5>GPIO</h5>
+    <p>
+      The GPIO class reads and writes from General Purpose I/O pins.<br />
+      <br />
+      <a href="GPIO_pinMode_.html">pinMode()</a><br />
+      <a href="GPIO_digitalWrite_.html">digitalWrite()</a><br />
+      <a href="GPIO_digitalRead_.html">digitalRead()</a><br />
+      <a href="GPIO_attachInterrupt_.html">attachInterrupt()</a><br />
+      <a href="GPIO_noInterrupts_.html">noInterrupts()</a><br />
+      <a href="GPIO_interrupts_.html">interrupts()</a><br />
+      <a href="GPIO_releaseInterrupt_.html">releaseInterrupt()</a><br />
+      <a href="GPIO_waitFor_.html">waitFor()</a><br />
+      <a href="GPIO_releasePin_.html">releasePin()</a><br />
+      <br />
+    </p>
+
+    <h5>I2C</h5>
+    <p>
+      The I2C class communicates with peripherals over I2C interfaces.<br />
+      <br />
+      <a href="I2C.html">I2C</a><br />
+      <a href="I2C_list_.html">list()</a><br />
+      <a href="I2C_beginTransmission_.html">beginTransmission()</a><br />
+      <a href="I2C_write_.html">write()</a><br />
+      <a href="I2C_read_.html">read()</a><br />
+      <a href="I2C_endTransmission_.html">endTransmission()</a><br />
+      <a href="I2C_close_.html">close()</a><br />
+      <br />
+    </p>
+
+    <h5>LED</h5>
+    <p>
+      The LED class controls the computer's build-in lights.<br />
+      <br />
+      <a href="LED.html">LED</a><br />
+      <a href="LED_list_.html">list()</a><br />
+      <a href="LED_brightness_.html">brightness()</a><br />
+      <a href="LED_close_.html">close()</a><br />
+      <br />
+    </p>
+
+  </p>
+</div>
+
+<div class="twocol-alt">
+  <p>
+
+    <h5>PWM</h5>
+    <p>
+      Use the SoftwareServo class below for the time being. Hardware PWM has yet to be made available by the hardware platforms we support.<br />
+      <br />
+      <a href="PWM.html">PWM</a><br />
+      <a href="PWM_list_.html">list()</a><br />
+      <a href="PWM_set_.html">set()</a><br />
+      <a href="PWM_clear_.html">clear()</a><br />
+      <a href="PWM_close_.html">close()</a><br />
+      <br />
+    </p>
+
+    <h5>SoftwareServo</h5>
+    <p>
+      The SoftwareServo class controls RC servo motors attached to General Purpose I/O pins.<br />
+      <br />
+      <a href="SoftwareServo.html">SoftwareServo</a><br />
+      <a href="SoftwareServo_attach_.html">attach()</a><br />
+      <a href="SoftwareServo_write_.html">write()</a> <br />
+      <a href="SoftwareServo_attached_.html">attached()</a><br />
+      <a href="SoftwareServo_detach_.html">detach()</a><br />
+      <br />
+    </p>
+
+    <h5>SPI</h5>
+    <p>
+      The SPI class communicates with attached devices over SPI interfaces.<br />
+      <br />
+      <a href="SPI.html">SPI</a><br />
+      <a href="SPI_list_.html">list()</a><br />
+      <a href="SPI_settings_.html">settings()</a> <br />
+      <a href="SPI_transfer_.html">transfer()</a><br />
+      <a href="SPI_close_.html">close()</a><br />
+      <br />
+    </p>
+  </p>
+</div>
+
+			
+			</div>
+
+			<!-- ==================================== FOOTER ============================ --> 
+  			<div id="footer">
+    			<div id="copyright">Processing was initiated by <a href="http://benfry.com/">Ben Fry</a> and <a href="http://reas.com">Casey Reas</a>. It is developed by a <a href="../../about/people.html">small team of volunteers</a>.</div>  
+    			<div id="colophon">
+
+                    <a href="../../copyright.html">&copy; Info</a>
+
+                </div>
+  			</div>
+  			
+		</div>
+	</body>
+</html>

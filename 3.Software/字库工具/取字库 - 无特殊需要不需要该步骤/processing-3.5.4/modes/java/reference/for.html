@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<title>for \ Language (API) \ Processing 3+</title>
+
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="Author" content="Processing Foundation" />
+		<meta name="Publisher" content="Processing Foundation" />
+		<meta name="Keywords" content="Processing, Sketchbook, Programming, Coding, Code, Art, Design" />
+		<meta name="Description" content="Processing is a flexible software sketchbook and a language for learning how to code within the context of the visual arts. Since 2001, Processing has promoted software literacy within the visual arts and visual literacy within technology." />
+		<meta name="Copyright" content="All contents copyright the Processing Foundation, Ben Fry, Casey Reas, and the MIT Media Laboratory" />
+
+		<script src="javascript/modernizr-2.6.2.touch.js" type="text/javascript"></script>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+	</head>
+	<body id="Langauge-en" onload="" >
+
+		<!-- ==================================== PAGE ============================ -->
+		<div id="container">
+
+
+			<!-- ==================================== HEADER ============================ -->
+			<div id="ribbon">
+				<ul class="left">
+					<li class="highlight"><a href="http://processing.org/">Processing</a></li>
+					<li><a href="http://p5js.org/">p5.js</a></li>
+					<li><a href="http://py.processing.org/">Processing.py</a></li>
+					<li><a href="http://android.processing.org/">Processing for Android</a></li>
+					<li><a href="http://pi.processing.org/">Processing for Pi</a></li>
+				</ul>
+				<ul class="right">
+					<li><a href="https://processingfoundation.org/">Processing Foundation</a></li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			<div id="header">
+				<a href="/" title="Back to the Processing cover."><div class="processing-logo no-cover" alt="Processing cover"></div></a>
+				<form name="search" method="get" action="//www.google.com/search">
+				       <p><input type="hidden" name="as_sitesearch" value="processing.org" />
+				       <input type="text" name="as_q" value="" size="20" class="text" />
+				       <input type="submit" value=" " /></p>
+				</form>
+			</div>
+			<!--<div id="ribbon-announce">
+				<ul class="center">
+					<li><a href="https://donorbox.org/supportpf2019-fundraising-campaign" target="_blank">This season, we need your help! Click here to donate to #SupportP5!</a></li>
+				</ul>
+				<div class="clear"></div>
+			</div>-->
+			<a id="TOP" name="TOP"></a>
+
+			<div id="navigation">
+				<div class="navBar" id="mainnav">
+	<a href="index.html" class='active'>Language</a><br>
+	<a href="libraries/index.html" >Libraries</a><br>
+	<a href="tools/index.html">Tools</a><br>
+	<a href="environment/index.html">Environment</a><br>
+</div>
+
+<script> document.querySelectorAll(".processing-logo")[0].className = "processing-logo"; </script>
+			</div>
+
+			<!-- ==================================== CONTENT - Headers ============================ -->
+			<div class="content">
+
+			 <p class="ref-notice">This reference is for Processing 3.0+. If you have a previous version, use the reference included with your software in the Help menu. If you see any errors or have suggestions, <a href="https://github.com/processing/processing-docs/issues?state=open">please let us know</a>. If you prefer a more technical reference, visit the <a href="http://processing.github.io/processing-javadocs/core/">Processing Core Javadoc</a> and <a href="http://processing.github.io/processing-javadocs/libraries/">Libraries Javadoc</a>.</p>
+
+<table cellpadding="0" cellspacing="0" border="0" class="ref-item">
+
+
+	<tr class="name-row">
+		<th scope="row">Name</th>
+
+		<td><h3>for</h3></td>
+	</tr>
+
+	<tr class="">
+
+	<tr class=""><th scope="row">Examples</th><td><div class="example"><img src="images/for_0.png" alt="example pic" /><pre class="margin">
+for (int i = 0; i < 40; i = i+1) {
+  line(30, i, 80, i);
+}
+</pre></div>
+
+<div class="example"><img src="images/for_1.png" alt="example pic" /><pre class="margin">
+for (int i = 0; i < 80; i = i+5) {
+  line(30, i, 80, i);
+}
+</pre></div>
+
+<div class="example"><img src="images/for_2.png" alt="example pic" /><pre class="margin">
+for (int i = 40; i < 80; i = i+5) {
+  line(30, i, 80, i);
+}
+</pre></div>
+
+<div class="example"><img src="images/for_3.png" alt="example pic" /><pre class="margin">
+// Nested for() loops can be used to
+// generate two-dimensional patterns
+for (int i = 30; i < 80; i = i+5) {
+  for (int j = 0; j < 80; j = j+5) {
+    point(i, j);
+  }
+}
+</pre></div>
+
+<div class="example"><pre >
+// This example has no visual output,
+// but prints values to the console.
+
+int[] nums = { 5, 4, 3, 2, 1 };
+
+for (int i : nums) {
+  println(i); 
+}
+</pre></div>
+</td></tr>
+
+		<tr class="">
+		<th scope="row">Description</th>
+		<td>
+Controls a sequence of repetitions. A basic <b>for</b> structure has three parts: <b>init</b>, <b>test</b>, and <b>update</b>. Each part must be separated by a semicolon (;). The loop continues until the <b>test</b> evaluates to <b>false</b>. When a <b>for</b> structure is executed, the following sequence of events occurs:<br />
+<br />
+1. The init statement is run.<br />
+2. The test is evaluated to be true or false.<br />
+3. If the test is <em>true</em>, jump to step 4. If the test is <em>false</em>, jump to step 6.<br />
+4. Run the statements within the block.<br />
+5. Run the update statement and jump to step 2.<br />
+6. Exit the loop.<br />
+<br />
+In the first example above, the <b>for</b> structure is executed 40 times. In the init statement, the value <em>i</em> is created and set to zero. <em>i</em> is less than 40, so the test evaluates as <em>true</em>. At the end of each loop, <em>i</em> is incremented by one. On the 41st execution, the test is evaluated as <em>false</em>, because <em>i</em> is then equal to 40, so <em>i &lt; 40</em> is no longer true. Thus, the loop exits.<br />
+<br />
+A second type of <b>for</b> structure makes it easier to iterate over each element of an array. The last example above shows how it works. Within the parentheses, first define the datatype of the array, then define a variable name. This variable name will be assigned to each element of the array in turn as the <b>for</b> moves through the entire array. Finally, after the colon, define the array name to be used. 
+</td>
+	</tr>
+
+	<tr class=""><th scope="row">Syntax</th><td><pre>
+for (init; test; update) { 
+  statements
+} 
+
+for (datatype element : array) { 
+  statements
+}
+</pre></td></tr>
+
+	<tr class="">	<th scope="row">Parameters</th><td><table cellpadding="0" cellspacing="0" border="0"><tr class="">
+<th scope="row" class="code">init</th>
+<td>statement executed once when beginning loop</td>
+</tr>
+<tr class="">
+<th scope="row" class="code">test</th>
+<td>if the test evaluates to <em>true</em>, the statements execute</td>
+</tr>
+<tr class="">
+<th scope="row" class="code">update</th>
+<td>executes at the end of each iteration</td>
+</tr>
+<tr class="">
+<th scope="row" class="code">statements</th>
+<td>collection of statements executed each time through the loop</td>
+</tr>
+<tr class="">
+<th scope="row" class="code">datatype</th>
+<td>datatype of elements in the array</td>
+</tr>
+<tr class="">
+<th scope="row" class="code">element</th>
+<td>temporary name to use for each element of the array</td>
+</tr>
+<tr class="">
+<th scope="row" class="code">array</th>
+<td>name of the array to iterate through</td>
+</tr></table></td>	</tr>
+
+	<tr class=""><th scope="row">Related</th><td><a class="code" href="while.html">while</a><br /></td></tr>
+</table>
+
+Updated on January 9, 2020 00:33:17pm EST<br /><br />
+
+<!-- Creative Commons License -->
+
+<div class="license">
+	<a rel="license" href="//creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border: none" src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" /></a>
+</div>
+<!--
+
+<?xpacket begin='' id=''?>
+<x:xmpmeta xmlns:x='adobe:ns:meta/'>
+  <rdf:RDF xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+    <rdf:Description rdf:about=''
+		     xmlns:xapRights='http://ns.adobe.com/xap/1.0/rights/'>
+      <xapRights:Marked>True</xapRights:Marked>
+    </rdf:Description>
+    <rdf:Description rdf:about=''
+		     xmlns:xapRights='http://ns.adobe.com/xap/1.0/rights/'
+		     >
+      <xapRights:UsageTerms>
+	<rdf:Alt>
+	  <rdf:li xml:lang='x-default' >This work is licensed under a &lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License&lt;/a&gt;.</rdf:li>
+	  <rdf:li xml:lang='en' >This work is licensed under a &lt;a rel=&#34;license&#34; href=&#34;http://creativecommons.org/licenses/by-nc-sa/4.0/&#34;&gt;Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License&lt;/a&gt;.</rdf:li>
+	  </rdf:Alt>
+      </xapRights:UsageTerms>
+    </rdf:Description>
+    <rdf:Description rdf:about=''
+      xmlns:cc='http://creativecommons.org/ns#'>
+      <cc:license rdf:resource='http://creativecommons.org/licenses/by-nc-sa/4.0/'/>
+    </rdf:Description>
+
+  </rdf:RDF>
+</x:xmpmeta>
+<?xpacket end='r'?>
+
+-->
+
+			</div>
+
+			<!-- ==================================== FOOTER ============================ -->
+  			<div id="footer">
+
+    			<div id="copyright">Processing is an open project intiated by <a href="http://benfry.com/">Ben Fry</a> and <a href="http://reas.com">Casey Reas</a>. It is developed by a <a href="http://processing.org/about/people/">team of volunteers</a>.</div>
+    			<div id="colophon">
+
+                    <a href="copyright.html">&copy; Info</a>
+
+                </div>
+  			</div>
+
+		</div>
+		<script src="javascript/jquery-1.9.1.min.js"></script>
+		<script src="javascript/site.js" type="text/javascript"></script>
+	</body>
+</html>
