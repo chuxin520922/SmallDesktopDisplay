@@ -21,6 +21,8 @@
 固件框架主要基于Arduino开发完成，玩过Arduino的基本没有上手难度了，把Firmware/Libraries里面的库安装到Arduino库目录（如果你用的是Arduino IDE的话）即可。
 
 > 由于后续发现，使用的是VS code上面的PlatfromIO插件进行Arduino开发，因为VS code+PlatfromIO编译速度起飞，强烈推荐使用VS code+PlatfromIO来编译，大家可以选择自己喜欢的IDE就好了。
+> 
+**代码优化版本：VS code+PlatfromIO ** https://github.com/SmallDesktopDisplay-team/SmallDesktopDisplay
 
 **然后这里需要官方库文件才能正常使用：**
 
