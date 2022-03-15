@@ -28,7 +28,8 @@
 
 肯定得安装ESP83266的Arduino<code>**支持包2.6.3**</code>（百度也有海量教程，本文件已经附带安装包，直接安装即可）
 
-**代码优化版本：VS code+PlatfromIO ** https://github.com/SmallDesktopDisplay-team/SmallDesktopDisplay
+
+**代码优化版本：VS code+PlatfromIO** https://github.com/SmallDesktopDisplay-team/SmallDesktopDisplay
 
 ## 3. QQ交流群
 
