@@ -22,21 +22,23 @@
 
 > 由于后续发现，使用的是VS code上面的PlatfromIO插件进行Arduino开发，因为VS code+PlatfromIO编译速度起飞，强烈推荐使用VS code+PlatfromIO来编译，大家可以选择自己喜欢的IDE就好了。
 > 
-**代码优化版本：VS code+PlatfromIO ** https://github.com/SmallDesktopDisplay-team/SmallDesktopDisplay
+
 
 **然后这里需要官方库文件才能正常使用：**
 
 肯定得安装ESP83266的Arduino<code>**支持包2.6.3**</code>（百度也有海量教程，本文件已经附带安装包，直接安装即可）
 
+**代码优化版本：VS code+PlatfromIO ** https://github.com/SmallDesktopDisplay-team/SmallDesktopDisplay
 
 ## 3. QQ交流群
 
 请注明来意！
 
-官方群1：<code>811058758</code>
+官方群1：<code>811058758</code> （已满）
 
-官方群2：<code>887171863</code>
+官方群2：<code>887171863</code>（已满）
 
+官方群3：<code>477140920</code>（未满）
 
 ## 其他的后续再补充，有用的话记得点星星~
 
